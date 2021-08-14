@@ -1,0 +1,95 @@
+{% extends 'Base.html' %}
+ 
+{% load static %}
+
+
+{% block content %}
+
+
+<br><br><br>
+
+<div style="background-color: black; height:65px"></div>
+
+{% for message in messages %}
+<marquee><h3 style="color: red; width:16%; height:35px;">{{message}}</h3></marquee>
+{% endfor %}
+
+
+<div class="row">   
+    <div class="col-md-12">
+        <div class="shop-extra">
+            <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#menu1">REGISTER</a></li>
+                <li><a data-toggle="tab" href="#menu2">LOGIN</a></li>
+            </ul>
+
+            <div class="tab-content">
+                <div id="menu1" class="tab-pane fade in active">
+                    <h3>Provide Your Credentials Here</h3>
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td><input type="text" name="fname" required/></td>
+                                <td>Enter First Name</td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" name="lname" required/></td>
+                                <td>Enter Last Name</td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" name="username" required/></td>
+                                <td>Enter User Name</td>
+                            </tr>
+                            <tr>
+                                <td><input type="email" name="email" required/></td>
+                                <td>Enter Your Email</td>
+                            </tr>
+                            <tr>
+                                <td><input type="password" name="password1" required/></td>
+                                <td>Enter Password</td>
+                            </tr>
+                            <tr>
+                                <td><input type="password" name="password2" required/></td>
+                                <td>Confirm Password</td>
+                            </tr>
+                            <tr>
+                                <td><button type="submit" class="btn btn-primary">Submit</button></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+                </div>
+                <div id="menu2" class="tab-pane fade">
+                
+                    <form action="{% url 'TTK:Login' %}" method="POST" class="big-contact-form row" role="search">
+                        {% csrf_token %}
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <td><input type="text" name="username" required/></td>
+                                    <td>Enter User Name</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="password" name="password1" required/></td>
+                                    <td>Enter Password</td>
+                                </tr>
+                                <tr>
+                                    <td><button type="submit" class="btn btn-primary">Submit</button></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>              
+                    </form>
+                </div>
+            </div>
+        </div><!-- end shop-extra -->
+    </div><!-- end col -->
+</div><!-- end row -->
+
+
+
+
+{% endblock %}
