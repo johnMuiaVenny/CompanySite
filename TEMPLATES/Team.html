@@ -1,92 +1,36 @@
-{% extends 'Base.html' %}
- 
- {% load static %}
+{% extends "Base.html" %}
 
+{% load static %}
 
 {% block content %}
 
+<section class="section bg-gray">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="heading text-center pb-5">
+                    <h2 class="font-weight-bold">MAIN TEAM</h2>
+                </div>
+            </div>
 
-        <section class="parallax event-section" data-stellar-background-ratio="0.5" style="background-image:url(' {% static "upload/5.jpg" %}');">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="tagline-message event-title text-center">
-                            <h3>Technology is Our Voice</h3>
-                            <p>We are a strong team working 24hours. Providing quality softwares and cloud services.</p>
-                            <a style="border-radius: 25%;" href="{% url 'TTK:Contact' %}" class="btn btn-primary">Contact Us</a>
-                        </div>
-                    </div><!-- end col -->
-                </div><!-- end row -->
-            </div><!-- end container -->
-        </section><!-- end section -->
+            {% for director in team %}
+            <div class="col-lg-4 col-md-6 mx-sm-auto">
+                <div class="package-content bg-light border text-center p-5 my-2 my-lg-0">
+                    <div class="package-content-heading border-bottom">
+                        <img class="card-img-top" src="{{director.Image.url}}" class="img-fluid w-100" alt="Card image cap">
+                        <h2>{{director.Name}}</h2>
+                        <h4 class="py-3"> {{director.Title}}</h4>
+                    </div>
+                    <a href="{{director.Image.url}}" class="btn btn-primary">View</a>
+                </div>
+            </div>
+            {% endfor %}
 
-        
-
-        <section class="section">
-            <div class="container">
-                <div class="section-title text-center">
-                    <h3>MAIN TEAM</h3>
-                    <p>We are a team of vibrant young minds with a vision to see all our clients best run business using technology. Our team spirit is driven by the desire to always deliver exceptional results in what we do.</p>
-                </div><!-- end title -->
-
-                <div class="row text-center">   
-
-                    {% for director in team %}
-                    <div class="col-md-4 col-sm-6">
-                        <div class="teammembers">
-                            <div class="entry">
-                                <img src="{{director.Image.url}}" alt="" class="img-responsive">
-                                <div class="magnifier">
-                                    <div class="visible-buttons1 teambuttons">
-                                        <p>{{director.Description}}</p>
-                                        <div class="social-links">
-                                            {% if director.FB_Account %}
-                                            <a href="{{director.FB_Account}}"><i class="fa fa-facebook"></i></a>
-                                            {% endif %}
-                                            {% if director.Twitter_Account %}
-                                            <a href="{{director.Twitter_Account}}"><i class="fa fa-twitter"></i></a>
-                                            {% endif %}
-                                            {% if director.Instagram_Account %}
-                                            <a href="{{director.Instagram_Account}}"><i class="fa fa-instagram"></i></a>
-                                            {% endif %}
-                                            {% if director.LinkedIn_Account %}
-                                            <a href="{{director.LinkedIn_Account}}"><i class="fa fa-linkedin"></i></a>
-                                            {% endif %}
-                                        </div><!-- end social -->
-                                    </div>
-                                </div>
-                            </div><!-- end box -->
-                            <div class="teamdesc">
-                                <h4>{{director.Name}}</h4>
-                                <p>{{director.Title}}</p>
-                            </div><!-- end teamdesc -->
-                        </div><!-- end teammembers -->
-                    </div><!-- end col -->
-                    {% endfor %}
-                    
-                </div><!-- end row -->
-            </div><!-- end container -->
-        </section>
-
-
-        <section class="section bgcolor1">
-            <div class="container">
-                <a href="#">
-                    <div class="row callout">
-                        <div class="col-md-4 text-center">
-                            <h3><sup>TTK</sup>100%</h3>
-                            <h4>Awesome services and Quality Softwares</h4>
-                        </div><!-- end col -->
-        
-                        <div class="col-md-8">
-                            <p class="lead">We are aiming at developing Quality products to our clients allover the world. </p>
-                        </div>
-                    </div><!-- end row -->
-                    </a>
-            </div><!-- end container -->  
-        </section>
-
-        
-    <script src="{% static 'js/videobg.js' %}"></script>
+        </div>
+    </div>
+</section>
+<!--============================
+=            Footer            =
+=============================-->
 
 {% endblock %}

@@ -1,94 +1,42 @@
-{% extends 'Base.html' %}
- 
-{% load static %}
+{% extends "Base.html" %}
 
+{% load static %}
 
 {% block content %}
 
-
-<br><br><br>
-
-<div style="background-color: black; height:65px"></div>
 
 {% for message in messages %}
 <marquee><h3 style="color: red; width:16%; height:35px;">{{message}}</h3></marquee>
 {% endfor %}
 
-
-<div class="row">   
-    <div class="col-md-12">
-        <div class="shop-extra">
-            <ul class="nav nav-tabs">
-                <li><a data-toggle="tab" href="#menu1">REGISTER</a></li>
-                <li class="active"><a data-toggle="tab" href="#menu2">LOGIN</a></li>
-            </ul>
-
-            <div class="tab-content">
-                <div id="menu1" class="tab-pane fade">
-                    <h3>Provide Your Credentials Here</h3>
-                <form action="{% url 'TTK:Register' %}" method="POST">
-                    {% csrf_token %}
-                    <table class="table">
-                        <tbody>
-                            <tr>
-                                <td><input type="text" name="fname" required/></td>
-                                <td>Enter First Name</td>
-                            </tr>
-                            <tr>
-                                <td><input type="text" name="lname" required/></td>
-                                <td>Enter Last Name</td>
-                            </tr>
-                            <tr>
-                                <td><input type="text" name="username" required/></td>
-                                <td>Enter User Name</td>
-                            </tr>
-                            <tr>
-                                <td><input type="email" name="email" required/></td>
-                                <td>Enter Your Email</td>
-                            </tr>
-                            <tr>
-                                <td><input type="password" name="password1" required/></td>
-                                <td>Enter Password</td>
-                            </tr>
-                            <tr>
-                                <td><input type="password" name="password2" required/></td>
-                                <td>Confirm Password</td>
-                            </tr>
-                            <tr>
-                                <td><button type="submit" class="btn btn-primary">Submit</button></td>
-                                <td></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </form>
-                </div>
-                <div id="menu2" class="tab-pane fade in active">
-                    <form action="" method="POST" class="big-contact-form row" role="search">
-                        {% csrf_token %}
-                        <table class="table">
-                            <tbody>
-                                <tr>
-                                    <td><input type="text" name="username" required/></td>
-                                    <td>Enter User Name</td>
-                                </tr>
-                                <tr>
-                                    <td><input type="password" name="password1" required/></td>
-                                    <td>Enter Password</td>
-                                </tr>
-                                <tr>
-                                    <td><button type="submit" class="btn btn-primary">Submit</button></td>
-                                    <td></td>
-                                </tr>
-                            </tbody>
-                        </table>          
+<section class="login py-5 border-top-1">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-5 col-md-8 align-item-center">
+                <div class="border">
+                    <h3 class="bg-gray p-4">Login Now</h3>
+                    <form action="" method="POST">
+                      {% csrf_token %}
+                        <fieldset class="p-4">
+                            <input type="text" placeholder="Username" name="username" class="border p-3 w-100 my-2">
+                            <input type="password" placeholder="Password" name="password1" class="border p-3 w-100 my-2">
+                            <div class="loggedin-forgot">
+                                    <input type="checkbox" id="keep-me-logged-in">
+                                    <label for="keep-me-logged-in" class="pt-3 pb-2">Keep me logged in</label>
+                            </div>
+                            <button type="submit" class="d-block py-3 px-5 bg-primary text-white border-0 rounded font-weight-bold mt-3">Log in</button>
+                            <a class="mt-3 d-block  text-primary" href="#">Forget Password? Reset.</a>
+                            <a class="mt-3 d-inline-block text-primary" href="{% url 'TTK:Register' %}">Register Now</a>
+                        </fieldset>
                     </form>
                 </div>
             </div>
-        </div><!-- end shop-extra -->
-    </div><!-- end col -->
-</div><!-- end row -->
+        </div>
+    </div>
+</section>
 
-
-
+<!--============================
+=            Footer            =
+=============================-->
 
 {% endblock %}

@@ -1,110 +1,140 @@
-{% extends 'Base2.html' %}
+{% extends "Base.html" %}
 
 {% load static %}
 
 {% block content %}
 
-       
 
-        <section class="section db p120">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="tagline-message page-title text-center">
-                            <h3>About US</h3>
-                            <ul class="breadcrumb">
-                                <li><a href="javascript:void(0)">TeamTechKenya</a></li>
-                                <li class="active">Know</li>
-                            </ul>
-                        </div>
-                    </div><!-- end col -->
-                </div><!-- end row -->
-            </div><!-- end container -->
-        </section><!-- end section -->
+<!--================================
+=            Page Title            =
+=================================-->
+<section class="page-title">
+	<!-- Container Start -->
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 offset-md-2 text-center">
+				<!-- Title text -->
+				<h3>About Us</h3>
+			</div>
+		</div>
+	</div>
+	<!-- Container End -->
+</section>
 
-        <section class="section gb nopadtop">
-            <div class="container">
-                <div class="boxed">
-                    <div class="row">
+<section class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="about-img">
+                    <img src="{% static 'images/about/about.jpg' %}" class="img-fluid w-100 rounded" alt="">
+                </div>
+            </div>
+            <div class="col-lg-6 pt-5 pt-lg-0">
+                <div class="about-content">
+                    <h3 class="font-weight-bold">Introduction</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc est justo, aliquam nec tempor
+                        fermentum, commodo et libero. Quisque et rutrum arcu. Vivamus dictum tincidunt magna id
+                        euismod. Nam sollicitudin mi quis orci lobortis feugiat.</p>
+                    <h3 class="font-weight-bold">How we can help</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc est justo, aliquam nec tempor
+                        fermentum, commodo et libero. Quisque et rutrum arcu. Vivamus dictum tincidunt magna id
+                        euismod. Nam sollicitudin mi quis orci lobortis feugiat. Lorem ipsum dolor sit amet,
+                        consectetur adipiscing elit. Nunc est justo, aliquam nec tempor fermentum, commodo et libero.
+                        Quisque et rutrum arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc est
+                        justo, aliquam nec tempor fermentum, commodo et libero. Quisque et rutrum arcu. Vivamus dictum
+                        tincidunt magna id euismod. Nam sollicitudin mi quis orci lobortis feugiat.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-                        <div class="sidebar col-md-4">
-                            <div class="widget clearfix">
-                                <div class="banner-widget">
-                                    <img src="{% static 'upload/3.jpg' %}" alt=""  class="img-responsive img-rounded wow slideInLeft">
-                                </div>
-                            </div>
+<section class="mb-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="heading text-center text-capitalize font-weight-bold py-5">
+                    <h2>our team</h2>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="card my-3 my-lg-0">
+                    <img class="card-img-top" src="{% static 'images/team/team1.jpg' %}" class="img-fluid w-100" alt="Card image cap">
+                    <div class="card-body bg-gray text-center">
+                        <h5 class="card-title">John Doe</h5>
+                        <p class="card-text">Founder / CEO</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="card my-3 my-lg-0">
+                    <img class="card-img-top" src="{% static 'images/team/team2.jpg' %}" class="img-fluid w-100" alt="Card image cap">
+                    <div class="card-body bg-gray text-center">
+                        <h5 class="card-title">John Doe</h5>
+                        <p class="card-text">Founder / CEO</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="card my-3 my-lg-0">
+                    <img class="card-img-top" src="{% static 'images/team/team3.jpg' %}" class="img-fluid w-100" alt="Card image cap">
+                    <div class="card-body bg-gray text-center">
+                        <h5 class="card-title">John Doe</h5>
+                        <p class="card-text">Founder / CEO</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="card my-3 my-lg-0">
+                    <img class="card-img-top" src="{% static 'images/team/team4.jpg' %}" class="img-fluid w-100" alt="Card image cap">
+                    <div class="card-body bg-gray text-center">
+                        <h5 class="card-title">John Doe</h5>
+                        <p class="card-text">Founder / CEO</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-                            <div class="widget clearfix">
-                                <h3 class="widget-title"><u>Our Vision</u></h3>
-                                <div class="post-widget">
-                                    <div class="media">
-                                        
-                                        <div class="media-body">
-                                            <h5 class="mt-0"><a href="blog-single.html">Learning English Like a Pro..wwedfghjkaffdghnmrweghjmedfgghnjgjyjtrty4evfesfetvevyrtdrggSsSfsdgsdsdgr rgegeg g gdfsdfs</a></h5>
-                                            <div class="blog-meta">
-                                                <ul class="list-inline">
-                                                </ul>
-                                            </div><!-- end blog-meta -->
-                                        </div>
-                                    </div>
-                                <h3 class="widget-title"><u>Our Mission</u></h3>    
-                                    <div class="media">
-                                        <div class="media-body">
-                                            <h5 class="mt-0"><a href="blog-single.html">How to create a beautiful website with Bootstrap</a></h5>
-                                            <div class="blog-meta">
-                                                <ul class="list-inline">
-                                                </ul>
-                                            </div><!-- end blog-meta -->
-                                        </div>
-                                    </div>
-                                <h3 class="widget-title"><u>Our Slogan</u></h3>
-                                    <div class="media">
-                                        <div class="media-body">
-                                            <h5 class="mt-0"><a href="blog-single.html">Don't forget to update your Google web master tools</a></h5>
-                                            <div class="blog-meta">
-                                                <ul class="list-inline">
-                                                </ul>
-                                            </div><!-- end blog-meta -->
-                                        </div>
-                                    </div>
-                                </div><!-- end post-widget -->
-                            </div><!-- end widget -->
-                        </div><!-- end sidebar -->
+<section class="section bg-gray">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-sm-6 my-lg-0 my-3">
+                <div class="counter-content text-center bg-light py-4 rounded">
+                    <i class="fa fa-smile-o d-block"></i>
+                    <span class="counter my-2 d-block" data-count="2314">0</span>
+                    <h5>Our Clients</h5>
+                    </script>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 my-lg-0 my-3">
+                <div class="counter-content text-center bg-light py-4 rounded">
+                    <i class="fa fa-user-o d-block"></i>
+                    <span class="counter my-2 d-block" data-count="1013">0</span>
+                    <h5>Active Projects</h5>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 my-lg-0 my-3">
+                <div class="counter-content text-center bg-light py-4 rounded">
+                    <i class="fa fa-bookmark-o d-block"></i>
+                    <span class="counter my-2 d-block" data-count="2413">0</span>
+                    <h5>Total Projects</h5>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 my-lg-0 my-3">
+                <div class="counter-content text-center bg-light py-4 rounded">
+                    <i class="fa fa-smile-o d-block"></i>
+                    <span class="counter my-2 d-block" data-count="2000">0</span>
+                    <h5>Working Hours</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
+<!--============================
+=            Footer            =
+=============================-->
 
-                        
-                        <div class="col-md-8">
-                            <div class="content blog-list">
-                                <div class="blog-wrapper clearfix">
-                                    <div class="blog-meta">
-                                        <small><a href="#">Technology is our voice.</a></small>
-                                        <h3><a href="blog-single.html" title="">How to Hire Icon Designer for Your Next Project</a></h3>
-                                        <ul class="list-inline">
-                                            <li>6 hours ago</li>
-                                            <li><span>written by</span> <a href="#">Edulogy Team</a></li>
-                                        </ul>
-                                    </div><!-- end blog-meta -->
-
-                                    <div class="blog-media caro-item">
-                                        <a href="{% static 'upload/5.jpg' %}" title=""><img src="{% static 'upload/5.jpg' %}" alt="" class="img-responsive img-rounded wow slideInRight"></a>
-                                    </div><!-- end media -->
-
-                                    <div class="blog-desc-big">
-                                        <p class="lead"> We are a team of Young skilled developers who are ready to be ambassadors of technology in the globe.</p>
-                                        <p>We intensively deal with all kinds of softwares including web development,cloud computing services,search engine optimization services, mobile application, desktop applications development and offer learning sessions to new developers.</p>
-                                        
-                                    </div><!-- end desc -->
-                                </div><!-- end blog -->
-                            </div><!-- end content -->
-
-                            
-                        </div><!-- end col -->
-                    </div><!-- end row -->
-                </div><!-- end boxed -->
-            </div><!-- end container -->
-        </section>
-
- {% endblock %}
-
-
- 
+{% endblock %}

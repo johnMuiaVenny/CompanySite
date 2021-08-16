@@ -1,126 +1,55 @@
-{% extends 'Base2.html' %}
+{% extends "Base.html" %}
 
 {% load static %}
 
 {% block content %}
 
-        <section class="section cb">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="tagline-message page-title">
-                            <h3><center>Our Services</center></h3>
-                        </div>
-                    </div><!-- end col -->
-                    <div class="col-md-6 text-right">
-                        <ul class="breadcrumb">
-                            <li><a href="javascript:void(0)">TeamTechKenya</a></li>
-                            <li class="active">Services</li>
-                        </ul>
-                    </div>
-                </div><!-- end row -->
-            </div><!-- end container -->
-        </section><!-- end section -->
 
-        <section class="section">
-            <div class="container">
-                <div class=" ">
-                    <div class="row">
-                        <div class="col-md-6 shop-media">
-                            <div class="row">
-                                <div class="col-md-12">
-                                <div class="#">
-                                    <img src="{% static 'upload/6.jpg' %}" style="border-radius: 15px;" alt="" class="img-responsive wow slideInRight">
-                                    <div class="magnifier">
-                                        <a rel="prettyPhoto[inline]" href="{% static 'upload/6.jpg' %}" title=""><i class="flaticon-add"></i></a>
-                                    </div>
-                                </div><!-- end image-wrap -->
-                                </div>
-                            </div><!-- end row -->
+<!--==========================================
+=            All Category Section            =
+===========================================-->
 
-                            <hr class="invis">
+<section class=" section">
+	<!-- Container Start -->
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<!-- Section title -->
+				<div class="section-title">
+					<h2>Services Description</h2>
+					<p>Suspendisse tristique porttitor magna, ac pulvinar libero lobortis at. Quisque sit amet facilisis eros. Vestibulum id ligula elementum, rutrum nunc sit amet, vulputate diam. Phasellus finibus mauris leo, quis commodo elit pellentesque quis. Phasellus a justo in enim maximus dictum nec interdum erat. Integer varius justo id nunc vulputate scelerisque. Curabitur maximus tristique magna. Nulla ut laoreet turpis, vel porta mauris. Suspendisse et varius orci, eget ullamcorper lacus. Duis accumsan odio at elit facilisis semper</p>
+				</div><br><br>
+				<center><h1>Some of Our Projects</h1></center><br>
 
-                    
-                        </div><!-- end col -->
+				<div class="row">
+					<!-- Category list -->
 
-                        <div class="col-md-6">
-                            <div class="shop-desc">
-                                <h3>Brief Introduction</h3>
-                                <small>Read</small>
-                                <p style="color: black;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis consequat condimentum. In a tincidunt purus. Curabitur facilisis luctus aliquet. Aenean a cursus erat, sit amet interdum arcu. Mauris aliquam magna turpis, lobortis pellentesque velit elementum et. Nulla scelerisque a lorem nec posuere. Nunc convallis posuere tincidunt. Pellentesque a aliquet odio. Integer euismod, enim id lacinia auctor, tortor turpis malesuada enim, in semper turpis magna quis enim.</p>
-                                <div class="shop-meta">
-                                    
-                                    <ul class="list-inline">
-                                        <li> </li>
-                                        <li>Visit <a href="#tech">Some of Our Projects</a>
-                                    </ul>
-                                </div><!-- end shop meta -->
-                            </div><!-- end desc -->
-                        </div><!-- end col -->
-                    </div><!-- end row -->
+					
+					{% for project in projects %}
+					<div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6 col-6">
+						<div class="category-block">
+							<div class="header">
+								<img class="card-img-top img-fluid" src="{{project.Display_Image.url}}" alt="Card image cap"> 
+								<h4>{{project.Name}}</h4>
+							</div>
+							<ul class="category-list" >
+								<li>{% if project.Link %}<a href="{{project.Link}}">{{project.Type}}</a>{% endif %}</li>
+							</ul>
+						</div>
+					</div> <!-- /Category List -->
+					{% endfor %}
 
-                    <hr class="invis">
+					<!-- Category list -->
+					
+					
+					
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Container End -->
+</section>
 
-                    <div class="row">   
-                        <div class="col-md-12">
-                            <div class="shop-extra">
-                                <ul class="nav nav-tabs">
-                                    <li class="active"><a data-toggle="tab" href="#">Services Description</a></li>
-                                </ul>
-
-                                <div class="tab-content">
-                                    <div id="home" class="tab-pane fade in active">
-                                        <p>Suspendisse tristique porttitor magna, ac pulvinar libero lobortis at. Quisque sit amet facilisis eros. Vestibulum id ligula elementum, rutrum nunc sit amet, vulputate diam. Phasellus finibus mauris leo, quis commodo elit pellentesque quis. Phasellus a justo in enim maximus dictum nec interdum erat. Integer varius justo id nunc vulputate scelerisque. Curabitur maximus tristique magna. Nulla ut laoreet turpis, vel porta mauris. Suspendisse et varius orci, eget ullamcorper lacus. Duis accumsan odio at elit facilisis semper.</p>
-
-                                        <p>Phasellus finibus mauris leo, quis commodo elit pellentesque quis. Phasellus a justo in enim maximus dictum nec interdum erat. Integer varius justo id nunc vulputate scelerisque. Curabitur maximus tristique magna. Nulla ut laoreet turpis, vel porta mauris. Suspendisse et varius orci, eget ullamcorper lacus. Duis accumsan odio at elit facilisis semper.</p>
-                                    </div>
-                                </div>
-                            </div><!-- end shop-extra -->
-                        </div><!-- end col -->
-                    </div><!-- end row -->
-
-            <div id="tech"></div>
-
-                    <div class="related-products">
-                        <div  class="text-widget">
-                            <h2><center>Some of Our Projects</center></h2>
-                        </div><!-- end title -->        
-
-                        <div class="row blog-grid shop-grid">
-
-                            {% for project in projects %}
-                            <div class="col-md-3">
-                                <div class="course-box shop-wrapper">
-                                    <div class="image-wrap entry">
-                                        <img src="{{project.Display_Image.url}}" alt="" class="img-responsive">
-                                        <div class="magnifier">
-                                            {% if project.Link %}
-                                            <a href="{{project.Link}}" title=""><i class="flaticon-add"></i></a>
-                                            {% endif %}
-                                        </div>
-                                    </div>
-                                    <!-- end image-wrap -->
-                                    <div class="course-details shop-box text-center">
-                                        <h4>
-                                            <a href="#" title="">{{project.Name}}</a>
-                                            <small>{{project.Type}}</small>
-                                        </h4>
-                                    </div>
-                                    <!-- end details -->
-                                    <div class="course-footer clearfix">
-                                    </div><!-- end footer -->
-                                </div><!-- end box -->
-                            </div><!-- end col -->
-                            {% endfor %}
-                            
-
-                        </div><!-- end row -->
-                    </div><!-- end related -->
-                </div><!-- end boxed -->
-            </div><!-- end container -->
-        </section>
-
-        
-    <script src="{% static 'js/jquery.prettyPhoto.js' %}"></script>
 
 {% endblock %}

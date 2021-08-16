@@ -1,95 +1,67 @@
-{% extends 'Base2.html' %}
+{% extends "Base.html" %}
 
 {% load static %}
 
 {% block content %}
 
+<!-- page title -->
+<!--================================
+=            Page Title            =
+=================================-->
+<section class="page-title">
+	<!-- Container Start -->
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 offset-md-2 text-center">
+				<!-- Title text -->
+				<h3>Contact Us</h3>
+			</div>
+		</div>
+	</div>
+	<!-- Container End -->
+</section>
+<!-- page title -->
 
-
-{% for message in messages %}
-<marquee><h3 style="color: red; width:16%; height:35px;">{{message}}</h3></marquee>
-{% endfor %}
-
-        <section class="section db p120">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="tagline-message page-title text-center">
-                            <h3>Get In Touch</h3>
-                            <ul class="breadcrumb">
-                                <li><a href="javascript:void(0)">TeamTechKenya</a></li>
-                                <li class="active">Get in touch</li>
-                            </ul>
-                        </div>
-                    </div><!-- end col -->
-                </div><!-- end row -->
-            </div><!-- end container -->
-        </section><!-- end section -->
-
-        <section class="section gb nopadtop">
-            <div class="container">
-                <div class="boxed boxedp4">
-
-                    <div id="map" class="wow slideInUp"></div>
-
-                    <div class="row contactv2 text-center">
-                        <div class="col-md-4">
-                            <div class="small-box">
-                                <i class="flaticon-email wow fadeIn"></i>
-                                <h4>Contact us today</h4>
-                                <small>Phone: +254 111 703 788</small>
-                                <small>Fax:  +254 746 179 393</small>
-                            </div><!-- end small-box -->
-                        </div><!-- end col -->
-
-                        <div class="col-md-4">
-                            <div class="small-box">
-                                <i class="flaticon-map-with-position-marker wow fadeIn"></i>
-                                <h4>Visit Our Office</h4>
-                                <small>PO Box 01015 KARATINA</small>
-                                <small>Along Nyeri Road</small>
-                            </div><!-- end small-box -->
-                        </div><!-- end col -->
-
-                        <div class="col-md-4">
-                            <div class="small-box">
-                                <i class="flaticon-share wow fadeIn"></i>
-                                <h4>Be Social</h4>
-                                <small>Twitter: @teamtechkenya</small>
-                                <small>Facebook: @teamtechkenya</small>
-                            </div><!-- end small-box -->
-                        </div><!-- end col -->
-                    </div><!-- end contactv2 -->
-
-                    <div class="row">
-                        <div class="col-md-6 col-md-offset-3">
-                            <div class="section-title text-center">
-                                <h3>Contact Form</h3>
-                                <p>In case of any question or any other concern you can contact us via this platform.</p>
-                            </div><!-- end title -->
-                            
-                            <form action="" method="POST" class="big-contact-form" role="search">
-                                {% csrf_token %}
-                                <input style="border-radius: 6px; border:2px solid skyblue;" type="text" class="form-control" placeholder="Enter your name.." name='Name' required>
-                                <input style="border-radius: 6px; border:2px solid skyblue;" type="email" class="form-control" placeholder="Enter email.." name='Email' required>
-                                <input style="border-radius: 6px; border:2px solid skyblue;" type="text" class="form-control" placeholder="Your phone.." name='Phone' required>
-                                <input style="border-radius: 6px; border:2px solid skyblue;" type="text" class="form-control" placeholder="Subject.." name='Subject' required>
-                                <textarea style="border-radius: 6px; border:2px solid skyblue;" class="form-control" placeholder="Message goes here.." name='Message' required></textarea>
-                                <button style="border-radius: 6px;" type="submit" class="btn btn-primary">Submit</button>
-                            </form>
-                        </div><!-- end col -->
-                    </div><!-- end row -->
-                </div><!-- end container -->
+<!-- contact us start-->
+<section class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="contact-us-content p-4">
+                    <h5>Contact Us</h5>
+                    <h1 class="pt-3">Hello, what's on your mind?</h1>
+                    <p class="pt-3 pb-5">In case of any question or any other concern in relation with our company or our services you can contact us via this platform.</p>
+                </div>
             </div>
-        </section>
+            <div class="col-md-6">
+                    <form action="" method="POST">
+                        <fieldset class="p-4">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-lg-6 py-2">
+                                        <input style="border-radius: 6px; border:2px solid skyblue;" name="Name" type="text" placeholder="Name" class="form-control" required>
+                                    </div>
+                                    <div class="col-lg-6 pt-2">
+                                        <input style="border-radius: 6px; border:2px solid skyblue;" name="Phone" type="text" placeholder="Phone" class="form-control" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <input style="border-radius: 6px; border:2px solid skyblue;" name="Email" type="email" placeholder="Email" class="form-control" required><br>
+                            <input style="border-radius: 6px; border:2px solid skyblue;" name="Subject" type="text" placeholder="Subject" class="form-control" required>
+                            <textarea style="border-radius: 6px; border:2px solid skyblue;" name="Message" id=""  placeholder="Message goes here.." class="w-100 p-3 mt-3 mt-lg-4"></textarea>
+                            <div class="btn-grounp">
+                                <button type="submit" class="btn btn-primary mt-2 float-right">SUBMIT</button>
+                            </div>
+                        </fieldset>
+                    </form>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- contact us end -->
 
-    <!-- VIDEO BG PLUGINS -->
-    <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyAkADq7R0xf6ami9YirAM1N-yl7hdnYBhM "></script>
-    <!-- MAP & CONTACT -->
-    <script src="js/map.js"></script>
-
+<!--============================
+=            Footer            =
+=============================-->
 
 {% endblock %}
-    
-    
-

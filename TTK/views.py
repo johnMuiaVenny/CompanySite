@@ -12,22 +12,28 @@ from .forms import *
 def index(request):
     return render(request, 'index.html')
 
-@login_required(login_url='/Login')
+#@login_required(login_url='/Login')
 def About(request):
     return render(request, 'About.html')
 
-@login_required(login_url='/Login')
+
+#@login_required(login_url='/Login')
+def Profile(request):
+    return render(request, 'Profile.html')
+
+
+#@login_required(login_url='/Login')
 def Team(request):
     team = DIRECTORS.objects.order_by('pk')[:6]
     return render(request, 'Team.html', {'team':team})
 
 
-@login_required(login_url='/Login')
+#@login_required(login_url='/Login')
 def Services(request):
     projects = PROJECT.objects.order_by('pk')[:4]
     return render(request, 'Services.html', {'projects':projects})
 
-@login_required(login_url='/Login')    
+#@login_required(login_url='/Login')    
 def Contact(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)

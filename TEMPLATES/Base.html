@@ -1,286 +1,232 @@
 {% load static %}
-
-
-<!doctype html>
-<!--[if IE 9]> <html class="no-js ie9 fixed-layout" lang="en"> <![endif]-->
-<!--[if gt IE 9]><!--> <html class="no-js " lang="en"> <!--<![endif]-->
+<!DOCTYPE html>
+<html lang="en">
 <head>
 
-    <!-- Basic -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    
-    <!-- Mobile Meta -->
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    
-    <!-- Site Meta -->
-    <title>TEAMTECHKENYA</title>
-    <meta name="keywords" content="">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    
-    <!-- Site Icons -->
-    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon" />
-    <link rel="apple-touch-icon" href="{% static 'images/apple-touch-icon.png' %}">
+  <!-- SITE TITTLE -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Team|Tech|Kenya</title>
+  
+  <!-- FAVICON -->
+  <link href="{% static 'img/favicon.png' %}" rel="shortcut icon">
+  <!-- PLUGINS CSS STYLE -->
+  <!-- <link href="{% static 'plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet"> -->
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="{% static 'plugins/bootstrap/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'plugins/bootstrap/css/bootstrap-slider.css' %}">
+  <!-- Font Awesome -->
+  <link href="{% static 'plugins/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+  <!-- Owl Carousel -->
+  <link href="{% static 'plugins/slick-carousel/slick/slick.css' %}" rel="stylesheet">
+  <link href="{% static 'plugins/slick-carousel/slick/slick-theme.css' %}" rel="stylesheet">
+  <!-- Fancy Box -->
+  <link href="{% static 'plugins/fancybox/jquery.fancybox.pack.css' %}" rel="stylesheet">
+  <link href="{% static 'plugins/jquery-nice-select/css/nice-select.css' %}" rel="stylesheet">
+  <!-- CUSTOM CSS -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
 
-	<!-- Google Fonts -->
-    <link href="{% static 'https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700,900' %}" rel="stylesheet"> 
-    <link href="{% static 'https://fonts.googleapis.com/css?family=Droid+Serif:400,400i,700,700i' %}" rel="stylesheet"> 
-	
-    <!-- Custom & Default Styles -->
-	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/carousel.css' %}">
-    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
-    <link rel="stylesheet" href="{% static 'style.css' %}">
 
-	<!--[if lt IE 9]>
-		<script src="{% static 'js/vendor/html5shiv.min.js"></script>
-		<script src="{% static 'js/vendor/respond.min.js"></script>
-	<![endif]-->
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="{% static 'https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js' %}"></script>
+  <script src="{% static 'https://oss.maxcdn.com/respond/1.4.2/respond.min.js' %}"></script>
+  <![endif]-->
 
-</head> 
-<body> 
- <!-- LOADER -->
- <div id="preloader">
-    <img class="preloader" src="{% static 'images/loader.gif' %}" alt="">
-</div><!-- end loader -->
-<!-- END LOADER -->
+</head>
 
-<div id="wrapper">
-    <!-- BEGIN # MODAL LOGIN -->
-    <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <!-- Begin # DIV Form -->
-                <div id="div-forms">
-                    <form id="login-form">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span class="flaticon-add" aria-hidden="true"></span>
-                        </button>
-                        <div class="modal-body">
-                            <input class="form-control" type="text" placeholder="What you are looking for?" required>
-                        </div>
-                    </form><!-- End # Login Form -->
-                </div><!-- End # DIV Form -->
-            </div>
-        </div> 
-    </div>
-    <!-- END # MODAL LOGIN -->
+<body class="body-wrapper">
 
-    <header class="header">
-        <div class="topbar clearfix">
-            <div class="container">
-                <div class="row-fluid">
-                    <div class="col-md-6 col-sm-6 text-left">
-                        <p>
-                            <strong><i class="fa fa-phone"></i></strong> +254 111 703 788 &nbsp;&nbsp;
-                            <strong><i class="fa fa-envelope"></i></strong> <a href="mailto:#">teamtechkenya@gmail.com</a>
-                        </p>
-                    </div><!-- end left -->
-                    <div class="col-md-6 col-sm-6 hidden-xs text-right">
-                        <div class="social">
-                            <a class="facebook" href="#" data-tooltip="tooltip" data-placement="bottom" title="Facebook"><i class="fa fa-facebook"></i></a>              
-                            <a class="twitter" href="#" data-tooltip="tooltip" data-placement="bottom" title="Twitter"><i class="fa fa-twitter"></i></a>
-                            <a class="google" href="#" data-tooltip="tooltip" data-placement="bottom" title="Google Plus"><i class="fa fa-google-plus"></i></a>
-                            <a class="linkedin" href="#" data-tooltip="tooltip" data-placement="bottom" title="Linkedin"><i class="fa fa-linkedin"></i></a>
-                            <a class="pinterest" href="#" data-tooltip="tooltip" data-placement="bottom" title="Pinterest"><i class="fa fa-pinterest"></i></a>
-                        </div><!-- end social -->
-                    </div><!-- end left -->
-                </div><!-- end row -->
-            </div><!-- end container -->
-        </div><!-- end topbar -->
-
+    <section>
         <div class="container">
-            <nav class="navbar navbar-default yamm">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <div class="logo-normal">
-                        <a class="navbar-brand" href="{% url 'TTK:index' %}"><img  src="{% static 'upload/logo.png' %}" alt=""></a>
-                    </div>
-                </div>
-
-                <div id="navbar" class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="{% url 'TTK:index' %}">Home</a></li>
-                        <li class="dropdown yamm-fw yamm-half"><a href="#" data-toggle="dropdown" class="dropdown-toggle active">Projects Done <b class="fa fa-angle-down"></b></a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <div class="yamm-content clearfix">
-                                        <div class="row-fluid">
-                                            <div class="col-md-6 col-sm-6">
-                                                <h4>Click To View</h4>
-                                                <ul>
-                                                    <li><a href="https://www.teamtechkenya.co.ke/">TeamTechKenya</a></li>
-                                                    <li><a href="https://www.teamtechkenya.co.ke/">AgriDoctorKenya</a></li>
-                                                    <li><a href="https://www.teamtechkenya.co.ke/">MoonLightStores</a></li>
-                                                    <li><a href="#">Project 04</a></li>
-                                                    <li><a href="#">Project 05</a></li>
-                                                    <li><a href="#">Project 06</a></li>
-                                                    <li><a href="#">Project 07</a></li>
-                                                    <li><a href="#">Project 08</a></li>
-                                                    <li><a href="#">Project 09</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-md-6 col-sm-6">
-                                                <div class="menu-widget text-center">
-                                                    <div class="image-wrap entry">
-                                                        <img src="{% static 'upload/6.jpg' %}" alt="" class="img-responsive">
-                                                        <div class="magnifier">
-                                                             <a href="#" title=""><i class="flaticon-add"></i></a>
-                                                        </div>
-                                                    </div><!-- end image-wrap -->
-                                                    <h5><a href="#">Designing the Best Softwares</a></h5>
-                                                    <small>100%</small>
-                                                    <a href="{% url 'TTK:Services' %}" class="menu-button">View Projects</a>
-                                                </div><!-- end widget -->
-                                            </div>
-                                        </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <nav class="navbar navbar-expand-lg navbar-light navigation">
+                        <a class="navbar-brand" href="{% url 'TTK:index' %}">
+                            <img src="{% static 'images/log.png' %}" alt="">
+                        </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ml-auto main-nav ">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="{% url 'TTK:index' %}">Home</a>
+                                </li>
+                                <li class="nav-item dropdown dropdown-slide">
+                                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="">Done projects<span><i class="fa fa-angle-down"></i></span>
+                                    </a>
+    
+                                    <!-- Dropdown list -->
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="https://www.teamtechkenya.co.ke/">TeamTechKenya</a>
+                                        <a class="dropdown-item" href="https://www.teamtechkenya.co.ke/">MoonlightStores</a>
+                                        <a class="dropdown-item" href="https://www.teamtechkenya.co.ke/">AgriDoctorKenya</a>
+                                        <a class="dropdown-item" href="https://www.teamtechkenya.co.ke/">project 4</a>
+                                        <a class="dropdown-item" href="https://www.teamtechkenya.co.ke/">project 5</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item dropdown dropdown-slide">
+                                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Pages <span><i class="fa fa-angle-down"></i></span>
+                                    </a>
+                                    <!-- Dropdown list -->
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="{% url 'TTK:About' %}">About Us</a>
+                                        <a class="dropdown-item" href="{% url 'TTK:Contact' %}">Contact Us</a>
+                                        <a class="dropdown-item" href="{% url 'TTK:Profile' %}">User Profile</a>
+                                        <a class="dropdown-item" href="{% url 'TTK:Team' %}">Our Team</a>    
+                                    </div>
+                                </li>
+                                <li class="nav-item dropdown dropdown-slide">
+                                    <a class="nav-link dropdown-toggle" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Services <span><i class="fa fa-angle-down"></i></span>
+                                    </a>
+                                    <!-- Dropdown list -->
+                                    <div class="dropdown-menu">
+                                      <a class="dropdown-item" href="{% url 'TTK:Services' %}">View Our Services</a>
                                     </div>
                                 </li>
                             </ul>
-                        </li>
-                        <li><a href="{% url 'TTK:Team' %}">Team</a></li>
-                        <li class="dropdown hassubmenu">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Accounts <span class="fa fa-angle-down"></span></a>
-                            <ul class="dropdown-menu" role="menu">
-                                {% if not request.user.is_authenticated %}
-                                <li><a href="{% url 'TTK:Register' %}">Register</a></li>
-                                <li><a href="{% url 'TTK:Login' %}">Login</a></li>
-                                {% else %}
-                                <li><a href="{% url 'TTK:Logout' %}">Logout</a></li>
-                                {% endif %}
+                            <ul class="navbar-nav ml-auto mt-10">
+                                <li class="nav-item">
+                                    {% if not request.user.is_authenticated %}
+                                    <a class="nav-link login-button" href="{% url 'TTK:Login' %}">Login</a>
+                                    {% else %}
+                                    <a class="nav-link login-button" href="{% url 'TTK:Logout' %}">Logout</a>
+                                    {% endif %}
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-white add-button" href="{% url 'TTK:Register' %}"><i class="fa fa-plus-circle"></i> Get started</a>
+                                </li>
                             </ul>
-                        </li>
-                        <li class="dropdown hassubmenu">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Pages <span class="fa fa-angle-down"></span></a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="{% url 'TTK:index' %}">Home</a></li>
-                                <li><a href="{% url 'TTK:About' %}">About Us</a></li>
-                                <li><a href="{% url 'TTK:Services' %}">Services</a></li>
-                                <li><a href="{% url 'TTK:Contact' %}">Contact Us</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="{% url 'TTK:Contact' %}">Contact</a></li>
-                        <li class="iconitem"><a href="#" data-toggle="modal" data-target="#login-modal"><i class="fa fa-search"></i></a></li>
-                    </ul>
-                </div>
-            </nav><!-- end navbar -->
-        </div><!-- end container -->
-    </header>
-    
-
-    {% block content %}
-
-    {% endblock %}
-
-
-
-
-    <footer class="section footer noover">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-4">
-                    <div class="widget clearfix">
-                        <h3 class="widget-title">Rate us Now</h3>
-                        <div class="newsletter-widget">
-                            <p>Submit your email below to rate our services.<br> See our <a href="{% url 'TTK:Services' %}">Services</a>.</p>
-                            <form class="form-inline" role="search">
-                                <div class="form-1">
-                                    <input type="text" class="form-control" placeholder="Enter email here..">
-                                    <button type="submit" class="btn btn-primary"><i class="fa fa-paper-plane-o"></i></button>
-                                </div>
-                            </form>
-                        </div><!-- end newsletter -->
-                    </div><!-- end widget -->
-                </div><!-- end col -->
-
-                <div class="col-lg-3 col-md-3">
-                    <div class="widget clearfix">
-                        <h3 class="widget-title">Join us today</h3>
-                        <p>Would you like to become a developer and work with us? Join us without losing time.</p>
-                        <a href="{% url 'TTK:Contact' %}" class="readmore">Send Request</a>
-                    </div><!-- end widget -->
-                </div><!-- end col -->
-
-                <div class="col-lg-3 col-md-3">
-                    <div class="widget clearfix">
-                        <h3 class="widget-title">Popular Tags</h3>
-                        <div class="tags-widget">   
-                            <ul class="list-inline">
-                                <li><a href="#">Python</a></li>
-                                    <li><a href="#">Django</a></li>
-                                    <li><a href="#">Javascript</a></li>
-                                    <li><a href="#">React js</a></li>
-                                    <li><a href="#">React Native</a></li>
-                                    <li><a href="#">Html</a></li>
-                                    <li><a href="#">Css</a></li>
-                                    <li><a href="#">Php</a></li>
-                                    <li><a href="#">Html5</a></li>
-                                    <li><a href="#">Java</a></li>
-                            </ul>
-                        </div><!-- end list-widget -->
-                    </div><!-- end widget -->
-                </div><!-- end col -->
-
-                <div class="col-lg-2 col-md-2">
-                    <div class="widget clearfix">
-                        <h3 class="widget-title">Social Accounts</h3>
-                        <div class="list-widget">   
-                            <ul>
-                                <a class="facebook" href="#" data-tooltip="tooltip" data-placement="bottom" title="Facebook"><i class="fa fa-facebook"></i></a>              
-                                <a style="margin-left: 10px;" class="twitter" href="#" data-tooltip="tooltip" data-placement="bottom" title="Twitter"><i class="fa fa-twitter"></i></a>
-                                <a style="margin-left: 10px;" class="google" href="#" data-tooltip="tooltip" data-placement="bottom" title="Google Plus"><i class="fa fa-google-plus"></i></a>
-                                <a style="margin-left: 10px;" class="linkedin" href="#" data-tooltip="tooltip" data-placement="bottom" title="Linkedin"><i class="fa fa-linkedin"></i></a>
-                                <a style="margin-left: 10px;" class="pinterest" href="#" data-tooltip="tooltip" data-placement="bottom" title="Pinterest"><i class="fa fa-pinterest"></i></a>
-                            </ul>
-                        </div><!-- end list-widget -->
-                    </div><!-- end widget -->
-                </div><!-- end col -->
-            </div><!-- end row -->
-        </div><!-- end container -->
-    </footer><!-- end footer -->
-
-    <div class="copyrights">
-        <div class="container">
-            <div class="clearfix">
-                <div class="pull-left">
-                    <div class="cop-logo">
-                        <a href="#"><img src="{% static 'images/logo.png' %}" alt=""></a>
-                    </div>
-                </div>
-
-                <div class="pull-right">
-                    <div class="footer-links">
-                        <ul class="list-inline">
-                            <li>Designed by : <a href="https://html.design">TeamTechKenya</a></li>
-                        </ul>
-                    </div>
+                        </div>
+                    </nav>
                 </div>
             </div>
-        </div><!-- end container -->
-    </div><!-- end copy -->
-</div><!-- end wrapper -->
+        </div>
+    </section>
 
-<!-- jQuery Files -->
-<script src="{% static 'js/jquery.min.js' %}"></script>
-<script src="{% static 'js/bootstrap.min.js' %}"></script>
-<script src="{% static 'js/carousel.js' %}"></script>
-<script src="{% static 'js/animate.js' %}"></script>
-<script src="{% static 'js/custom.js' %}"></script>
-<!-- <script src="{% static 'js/parallax.js' %}"></script>
-<script src="{% static 'js/vendor/html5shiv.js' %}"></script>
-<script src="{% static 'js/bootstrap-select.min.js' %}"></script>
-<script src="{% static 'js/bootstrap.js' %}"></script>
-<script src="{% static 'js/jquery.prettyPhoto.js' %}"></script>-->
-<!-- <script src="{% static 'js/vendor/respond.min.js' %}"></script>  -->
-<!-- VIDEO BG PLUGINS -->
-<!-- <script src="{% static 'js/videobg.js' %}"></script> -->
+{% block content %}
 
-</body>
-</html>
+
+{% endblock %}
+
+<footer class="footer section section-sm">
+    <!-- Container Start -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-7 offset-md-1 offset-lg-0">
+          <!-- About -->
+          <div class="block about">
+            <!-- footer logo -->
+            
+            <!-- description -->
+            <p class="alt-color">We intensively deal with all kinds of softwares including web development,cloud computing services,search engine optimization services, mobile application, desktop applications development and offer learning sessions to new developers.</p>
+          </div>
+        </div>
+        <!-- Link list -->
+        <div class="col-lg-2 offset-lg-1 col-md-3">
+          <div class="block">
+            <h4>Site Pages</h4>
+            <ul>
+              <li><a href="{% url 'TTK:index' %}">Home Page</a></li>
+              <li><a href="{% url 'TTK:About' %}">About Page</a></li>
+              <li><a href="{% url 'TTK:Services' %}">Services Page</a></li>
+              <li><a href="{% url 'TTK:Team' %}">Team Page</a></li>
+              <li><a href="{% url 'TTK:Contact' %}">Contact Page</a></li>
+            </ul>
+          </div>
+        </div>
+        <!-- Link list -->
+        <div class="col-lg-2 col-md-3 offset-md-1 offset-lg-0">
+          <div class="block">
+            <h4>Popular Skills</h4>
+            <ul>
+              <li><a href="#">Python</a></li>
+              <li><a href="#">Django</a></li>
+              <li><a href="#">Javascript</a></li>
+              <li><a href="#">React  js</a></li>
+              <li><a href="#">Html & Css</a></li>
+  
+  
+  
+            </ul>
+          </div>
+        </div>
+        <!-- Promotion -->
+        <div class="col-lg-4 col-md-7">
+          <!-- App promotion -->
+          <div class="block-2 app-promotion">
+            <div class="mobile d-flex">
+              <a href="">
+                <!-- Icon -->
+                <img src="{% static 'images/log.png' %}" alt="">
+              </a>
+              <p>We are TeamTechKenya where Technology is Our Voice</p>
+            </div>
+            <div class="download-btn d-flex my-3">
+              <a href="#"><img src="{% static 'images/apps/google-play-store.png' %}" class="img-fluid" alt=""></a>
+              <a href="#" class=" ml-3"><img src="{% static 'images/apps/apple-app-store.png' %}" class="img-fluid" alt=""></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Container End -->
+  </footer>
+  <!-- Footer Bottom -->
+  <footer class="footer-bottom">
+    <!-- Container Start -->
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6 col-12">
+          <!-- Copyright -->
+          <div class="copyright">
+            <p>Copyright © <script>
+                var CurrentYear = new Date().getFullYear()
+                document.write(CurrentYear)
+              </script>. Designed by :  <a class="text-primary" href="https://www.teamtechkenya.co.ke/" target="_blank">TeamTechKenya</a></p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-12">
+          <!-- Social Icons -->
+          <ul class="social-media-icons text-right">
+            <li><a class="fa fa-facebook" href="https://www.teamtechkenya.co.ke/" target="_blank"></a></li>
+            <li><a class="fa fa-twitter" href="https://www.teamtechkenya.co.ke/" target="_blank"></a></li>
+            <li><a class="fa fa-instagram" href="https://www.teamtechkenya.co.ke/" target="_blank"></a></li>
+            <li><a class="fa fa-linkedin" href="https://www.teamtechkenya.co.ke/"></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Container End -->
+    <!-- To Top -->
+    <div class="top-to">
+      <a id="top" class="" href="#"><i class="fa fa-angle-up"></i></a>
+    </div>
+  </footer>
+  
+  <!-- JAVASCRIPTS -->
+  <script src="{% static 'plugins/jQuery/jquery.min.js' %}"></script>
+  <script src="{% static 'plugins/bootstrap/js/popper.min.js' %}"></script>
+  <script src="{% static 'plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'plugins/bootstrap/js/bootstrap-slider.js' %}"></script>
+    <!-- tether js -->
+  <script src="{% static 'plugins/tether/js/tether.min.js' %}"></script>
+  <script src="{% static 'plugins/raty/jquery.raty-fa.js' %}"></script>
+  <script src="{% static 'plugins/slick-carousel/slick/slick.min.js' %}"></script>
+  <script src="{% static 'plugins/jquery-nice-select/js/jquery.nice-select.min.js' %}"></script>
+  <script src="{% static 'plugins/fancybox/jquery.fancybox.pack.js' %}"></script>
+  <script src="{% static 'plugins/smoothscroll/SmoothScroll.min.js' %}"></script>
+  <!-- google map -->
+  <script src="{% static 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU&libraries=places' %}"></script>
+  <script src="{% static 'plugins/google-map/gmap.js' %}"></script>
+  <script src="{% static 'js/script.js' %}"></script>
+  
+  </body>
+  
+  </html>

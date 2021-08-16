@@ -1,252 +1,288 @@
- {% extends 'Base.html' %}
- 
- {% load static %}
+{% extends "Base.html" %}
 
+{% load static %}
 
 {% block content %}
 
-<style>
-    * {
-      box-sizing: border-box;
-    }
-    
-    body {
-      margin: 0;
-      font-family: Arial;
-      font-size: 17px;
-    }
-    
-    #myVideo {
-      position: fixed;
-      right: 0;
-      bottom: 0;
-      min-width: 100%; 
-      min-height: 100%;
-    }
-    
-    .content {
-      position: fixed;
-      bottom: 0;
-      background: rgba(0, 0, 0, 0.5);
-      color: #f1f1f1;
-      width: 100%;
-      padding: 20px;
-    }
-    
-    #myBtn {
-      width: 200px;
-      font-size: 18px;
-      padding: 10px;
-      border: none;
-      background: #000;
-      color: #fff;
-      cursor: pointer;
-    }
-    
-    #myBtn:hover {
-      background: #ddd;
-      color: black;
-    }
-    </style>
+<!--===============================
+=            Hero Area            =
+================================-->
 
-        <section  id="home" class="video-section js-height-full">
+<section class="hero-area bg-1 text-center overly">
+	<!-- Container Start -->
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<!-- Header Contetnt -->
+				<div class="content-block">
+					<h1>Team Tech Kenya </h1>
+					<p>Welcome to TeamTechKenya software development company <br> Technology is our voice here</p>
+					<div class="short-popular-category-list text-center">
+						<h2>Popular Category</h2>
+						<ul class="list-inline">
+							<li class="list-inline-item">
+								<a href="category.html"><i class="fa fa-bed"></i> Hotel</a></li>
+							<li class="list-inline-item">
+								<a href="category.html"><i class="fa fa-grav"></i> Fitness</a>
+							</li>
+							<li class="list-inline-item">
+								<a href="category.html"><i class="fa fa-car"></i> Cars</a>
+							</li>
+							<li class="list-inline-item">
+								<a href="category.html"><i class="fa fa-cutlery"></i> Restaurants</a>
+							</li>
+							<li class="list-inline-item">
+								<a href="category.html"><i class="fa fa-coffee"></i> Cafe</a>
+							</li>
+						</ul>
+					</div>
+					
+				</div>
+				<!-- Advance Search -->
+				<div class="advance-search">
+						<div class="container">
+							<div class="row justify-content-center">
+								<div class="col-lg-12 col-md-12 align-content-center">
+										<form>
+											<div class="form-row">
+												<div class="form-group col-md-4">
+													<input type="text" class="form-control my-2 my-lg-1" id="inputtext4" placeholder="What are you looking for">
+												</div>
+												<div class="form-group col-md-3">
+													<select class="w-100 form-control mt-lg-1 mt-md-2">
+														<option>Category</option>
+														<option value="1">Top rated</option>
+														<option value="2">Lowest Price</option>
+														<option value="4">Highest Price</option>
+													</select>
+												</div>
+												<div class="form-group col-md-3">
+													<input type="text" class="form-control my-2 my-lg-1" id="inputLocation4" placeholder="Location">
+												</div>
+												<div class="form-group col-md-2 align-self-center">
+													<button type="submit" class="btn btn-primary">Search Now</button>
+												</div>
+											</div>
+										</form>
+									</div>
+								</div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	<!-- Container End -->
+</section>
 
-            <video  autoplay muted loop id="myVideo" >
-                <source src="{% static 'upload/preview.mp4' %}" type="video/mp4">
-                <source src="{% static 'upload/preview.webm' %}" type="video/webm">
-                <p>Your browser doesn't support HTML5 video. Here is
-                   a <a href="myVideo.mp4">link to the video</a> instead.</p>
-            </video>
+<!--===================================
+=            Client Slider            =
+====================================-->
 
 
-            <div class="overlay"></div>
-            <div class="home-text-wrapper relative container">
-                <div class="home-message">
-                    <p>TEAM TECH KENYA</p>
-                    <small>Welcome to Team tech kenya software development company where technology is our voice.</small>
-                    <div class="btn-wrapper">
-                        <div class="text-center">
-                            <a href="{% url 'TTK:About' %}" style="border-radius: 50%;" class="btn btn-primary wow slideInLeft">About_Us</a> &nbsp;&nbsp;&nbsp;<a style="border-radius: 50%;" href="{% url 'TTK:Team' %}" class="btn btn-default wow slideInRight">Our_Team</a>
-                        </div>
-                    </div><!-- end row -->
-                </div>
-            </div>
-            <div class="slider-bottom">
-                <span>Explore <i class="fa fa-angle-down"></i></span>
-            </div>
-        </section>
-          
-        <section class="section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4 hidden-sm hidden-xs">
-                        <div class="custom-module">
-                            <img src="{% static 'upload/1.png' %}" alt="" class="img-responsive wow slideInLeft">
-                        </div><!-- end module -->
-                    </div><!-- end col -->
-                    <div class="col-md-8">
-                        <div class="custom-module p40l">
-                            <h2>We are a team of Young skilled developers<br>
-                                who are ready to be ambassadors of technology <br>
-                                in the globe.</h2>
+<!--===========================================
+=            Popular deals section            =
+============================================-->
 
-                            <p>We intensively deal with all kinds of softwares including web development,cloud computing services,search engine optimization services, mobile application, desktop applications development and offer learning sessions to new developers.</p>
-
-                            <hr class="invis">
-
-                            <div class="row">
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 first">
-                                    <ul class="check">
-                                        <li>Web development</li>
-                                        <li>Cloud computing</li>
-                                    </ul><!-- end check -->
-                                </div><!-- end col-lg-4 -->
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                    <ul class="check">
-                                        <li>Desktop applications</li>
-                                        <li>APIs development</li>
-                                    </ul><!-- end check -->    
-                                </div><!-- end col-lg-4 -->
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 last">
-                                    <ul class="check">
-                                        <li>Systems development</li>
-                                        <li>Data analysis</li>
-                                    </ul><!-- end check -->
-                                </div><!-- end col-lg-4 --> 
-                            </div><!-- end row -->   
-
-                            <hr class="invis">
-
-                            <div class="btn-wrapper">
-                                <a href="{% url 'TTK:Services' %}" style="border-radius: 25%;" class="btn btn-primary">View Our Services</a>
-                            </div>
-
-                        </div><!-- end module -->
-                    </div><!-- end col -->
-                </div><!-- end row -->
-            </div><!-- end container -->
-        </section>
-
-    
-
-        <section class="section db p120">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="tagline-message text-center">
-                            <h3>We are in partnership with other development companies for the production of qualified softwares.</h3>
-                        </div>
-                    </div><!-- end col -->
-                </div><!-- end row -->
-            </div><!-- end container -->
-        </section><!-- end section -->
-
-        <section class="section gb nopadtop">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="box m30">
-                            <i class="flaticon-computer-tool-for-education"></i>
-                            <h4>Techminia</h4>
-                            <p>We do partnar with this company for web based software development.</p>
-                            <a href="#" class="readmore">Join</a>
-                        </div>
-                    </div><!-- end col -->
-
-                    <div class="col-md-6">
-                        <div class="box m30">
-                            <i class="flaticon-monitor-tablet-and-smartohone"></i>
-                            <h4>Nyeri Tech Company</h4>
-                            <p>We do partnar with this company for web based software development. We do partnar with this company for adroid based software development.</p>
-                            <a href="#" class="readmore">Join</a>
-                        </div>
-                    </div><!-- end col -->
-
-                    <div class="col-md-3">
-                        <div class="box m30">
-                            <i class="flaticon-download-business-statistics-symbol-of-a-graphic"></i>
-                            <h4>Pwani Tech</h4>
-                            <p>We do partnar  for adroid based software development.</p>
-                            <a href="#" class="readmore">Join</a>
-                        </div>
-                    </div><!-- end col -->
-                </div><!-- end row -->
-
-                <hr class="invis">
-
-                
-            </div><!-- end container -->
-        </section>
-
-        <section class="section db">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4 col-md-4">
-                        <div class="stat-count">
-                            <h4 class="stat-timer">1230</h4>
-                            <h3><i class="flaticon-black-graduation-cap-tool-of-university-student-for-head"></i> Our Clients</h3>
-                            <p>We've managed to secure a good number of clients allover the world. </p>
-                        </div><!-- stat-count -->
-                    </div><!-- end col -->
-
-                    <div class="col-lg-4 col-md-4">
-                        <div class="stat-count">
-                            <h4 class="stat-timer">331</h4>
-                            <h3><i class="flaticon-online-course"></i> Our services</h3>
-                            <p>We do offer a wide rage of services to our clients for better satisfaction. </p>
-                        </div><!-- stat-count -->
-                    </div><!-- end col -->
-
-                    <div class="col-lg-4 col-md-4">
-                        <div class="stat-count">
-                            <h4 class="stat-timer">8901</h4>
-                            <h3><i class="flaticon-coffee-cup"></i> working Hours</h3>
-                            <p>We're in coding 24 seven for early deployments. </p>
-                        </div><!-- stat-count -->
-                    </div><!-- end col -->
-                </div><!-- end row -->
-            </div><!-- end container -->
-        </section>
-
-        
-
-        <section class="section bgcolor1">
-            <div class="container">
-                <a href="#">
-                <div class="row callout">
-                    <div class="col-md-4 text-center">
-                        <h3><sup>TTK</sup>100%</h3>
-                        <h4>Awesome services and Quality Softwares</h4>
-                    </div><!-- end col -->
-    
-                    <div class="col-md-8">
-                        <p class="lead">We are aiming at developing Quality products to our clients allover the world. </p>
-                    </div>
-                </div><!-- end row -->
-                </a>
-            </div><!-- end container -->  
-        </section>
+<section class="popular-deals section bg-gray">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="section-title">
+					<h2>Current Projects</h2>
+					<p>Our team spirit is driven by the desire to always deliver exceptional results in what we do.</p>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<!-- offer 01 -->
+			<div class="col-lg-12">
+				<div class="trending-ads-slide">
+					<div class="col-sm-12 col-lg-4">
+						<!-- product card -->
+<div class="product-item bg-light">
+	<div class="card">
+		<div class="thumb-content">
+			<!-- <div class="price">$200</div> -->
+			<a href="single.html">
+				<img class="card-img-top img-fluid" src="{% static 'images/products/5.jpg' %}" alt="Card image cap">
+			</a>
+		</div>
+		<div class="card-body">
+		    <h4 class="card-title"><a href="single.html">11inch Macbook Air</a></h4>
+		    <ul class="list-inline product-meta">
+		    	<li class="list-inline-item">
+		    		<a href="single.html"><i class="fa fa-folder-open-o"></i>Electronics</a>
+		    	</li>
+		    	<li class="list-inline-item">
+		    		<a href="#"><i class="fa fa-calendar"></i>26th December</a>
+		    	</li>
+		    </ul>
+		    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, aliquam!</p>
+		    <div class="product-ratings">
+		    	<ul class="list-inline">
+		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+		    		<li class="list-inline-item"><i class="fa fa-star"></i></li>
+		    	</ul>
+		    </div>
+		</div>
+	</div>
+</div>
 
 
 
+					</div>
+					<div class="col-sm-12 col-lg-4">
+						<!-- product card -->
+<div class="product-item bg-light">
+	<div class="card">
+		<div class="thumb-content">
+			<!-- <div class="price">$200</div> -->
+			<a href="single.html">
+				<img class="card-img-top img-fluid" src="{% static 'images/products/5.jpg' %}" alt="Card image cap">
+			</a>
+		</div>
+		<div class="card-body">
+		    <h4 class="card-title"><a href="single.html">Full Study Table Combo</a></h4>
+		    <ul class="list-inline product-meta">
+		    	<li class="list-inline-item">
+		    		<a href="single.html"><i class="fa fa-folder-open-o"></i>Furnitures</a>
+		    	</li>
+		    	<li class="list-inline-item">
+		    		<a href="#"><i class="fa fa-calendar"></i>26th December</a>
+		    	</li>
+		    </ul>
+		    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, aliquam!</p>
+		    <div class="product-ratings">
+		    	<ul class="list-inline">
+		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+		    		<li class="list-inline-item"><i class="fa fa-star"></i></li>
+		    	</ul>
+		    </div>
+		</div>
+	</div>
+</div>
 
 
 
-        <script>
-            var video = document.getElementById("myVideo");
-            var btn = document.getElementById("myBtn");
-            
-            function myFunction() {
-              if (video.paused) {
-                video.play();
-                btn.innerHTML = "Pause";
-              } else {
-                video.pause();
-                btn.innerHTML = "Play";
-              }
-            }
-        </script>
+					</div>
+					<div class="col-sm-12 col-lg-4">
+						<!-- product card -->
+<div class="product-item bg-light">
+	<div class="card">
+		<div class="thumb-content">
+			<!-- <div class="price">$200</div> -->
+			<a href="single.html">
+				<img class="card-img-top img-fluid" src="{% static 'images/products/5.jpg' %}" alt="Card image cap">
+			</a>
+		</div>
+		<div class="card-body">
+		    <h4 class="card-title"><a href="single.html">11inch Macbook Air</a></h4>
+		    <ul class="list-inline product-meta">
+		    	<li class="list-inline-item">
+		    		<a href="single.html"><i class="fa fa-folder-open-o"></i>Electronics</a>
+		    	</li>
+		    	<li class="list-inline-item">
+		    		<a href="#"><i class="fa fa-calendar"></i>26th December</a>
+		    	</li>
+		    </ul>
+		    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, aliquam!</p>
+		    <div class="product-ratings">
+		    	<ul class="list-inline">
+		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+		    		<li class="list-inline-item"><i class="fa fa-star"></i></li>
+		    	</ul>
+		    </div>
+		</div>
+	</div>
+</div>
+
+
+
+					</div>
+					<div class="col-sm-12 col-lg-4">
+						<!-- product card -->
+<div class="product-item bg-light">
+	<div class="card">
+		<div class="thumb-content">
+			<!-- <div class="price">$200</div> -->
+			<a href="single.html">
+				<img class="card-img-top img-fluid" src="{% static 'images/products/5.jpg' %}" alt="Card image cap">
+			</a>
+		</div>
+		<div class="card-body">
+		    <h4 class="card-title"><a href="single.html">Full Study Table Combo</a></h4>
+		    <ul class="list-inline product-meta">
+		    	<li class="list-inline-item">
+		    		<a href="single.html"><i class="fa fa-folder-open-o"></i>Furnitures</a>
+		    	</li>
+		    	<li class="list-inline-item">
+		    		<a href="#"><i class="fa fa-calendar"></i>26th December</a>
+		    	</li>
+		    </ul>
+		    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, aliquam!</p>
+		    <div class="product-ratings">
+		    	<ul class="list-inline">
+		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+		    		<li class="list-inline-item"><i class="fa fa-star"></i></li>
+		    	</ul>
+		    </div>
+		</div>
+	</div>
+</div>
+
+
+
+					</div>
+				</div>
+			</div>
+			
+			
+		</div>
+	</div>
+</section>
+
+<!--====================================
+=            Call to Action            =
+=====================================-->
+
+<section class="call-to-action overly bg-3 section-sm">
+	<!-- Container Start -->
+	<div class="container">
+		<div class="row justify-content-md-center text-center">
+			<div class="col-md-8">
+				<div class="content-holder">
+					<h2>Start today to get more qualified software products from us</h2>
+					<ul class="list-inline mt-30">
+						<li class="list-inline-item"><a class="btn btn-main" href="{% url 'TTK:Services' %}">Our Services</a></li>
+						<li class="list-inline-item"><a class="btn btn-secondary" href="{% url 'TTK:Contact' %}">Our Contacts</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Container End -->
+</section>
+
+<!--============================
+=            Footer            =
+=============================-->
 
 {% endblock %}
 
-        
+
+
+
+
