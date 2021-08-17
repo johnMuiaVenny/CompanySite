@@ -13,6 +13,8 @@ urlpatterns = [
     path('Contact', Contact, name = 'Contact'),
     path('Team', Team, name = 'Team'),
     path('Profile', Profile, name = 'Profile'),
+    path('Blogs', Blogs, name = 'Blogs'),
+    path('<int:id>', UpdateProfile, name = 'UpdateProfile'),
     path('Services', Services, name = 'Services'),
     path('', index, name = 'index'),
 ]

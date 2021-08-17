@@ -1,0 +1,83 @@
+{% extends "Base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<!--================================
+=            Page Title            =
+=================================-->
+<section class="page-title">
+	<!-- Container Start -->
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 offset-md-2 text-center">
+				<!-- Title text -->
+				<h3>Our Blogs</h3>
+			</div>
+		</div>
+	</div>
+	<!-- Container End -->
+</section>
+<!--==================================
+=            Blog Section            =
+===================================-->
+
+<section class="blog section">
+	<div class="container">
+		<div class="row">
+		 <div class="col-md-10 offset-md-1 col-lg-9 offset-lg-0">
+	
+    
+<!-- Article 01 -->
+{% for blog in blog %}
+<article>
+	<!-- Post Image -->
+	<div class="image">
+		<img src="{{blog.Image.url}}" alt="article-01">
+	</div>
+	<!-- Post Title -->
+	<h3>{{blog.Title}}</h3>
+	<ul class="list-inline">
+		<li class="list-inline-item">{{blog.Date_Created}}</li>
+	</ul>
+	<!-- Post Description -->
+	<p class="">{{blog.Description}}</p>
+	<!-- Read more button -->
+	<a href="{% url 'TTK:About' %}" class="btn btn-transparent">Read More</a>
+</article>
+{% endfor %}
+
+			</div>
+			  <div class="col-md-10 offset-md-1 col-lg-3 offset-lg-0">
+				<div class="sidebar">
+					<!-- Search Widget -->
+					<div class="widget search p-0">
+						<div class="input-group">
+
+							<form action="">
+								{% csrf_token %}
+								{{filtered.form}}
+								<input type="submit" value="Search"/>
+							</form>
+					    </div>
+					</div>
+					<!-- Category Widget -->
+					<div class="widget category">
+						<!-- Widget Header -->
+						<h5 class="widget-header">INTRODUCTION</h5>
+						<ul class="category-list">
+							<p>We are a great team working together to bring the world to a different level in terms of technology. Any software of you interest is available from us. welcome. We are a team of Young skilled developers who are ready to be ambassadors of technology in the globe</p>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!--============================
+=            Footer            =
+=============================-->
+
+{% endblock %}

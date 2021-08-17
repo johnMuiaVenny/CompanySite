@@ -1,4 +1,6 @@
 from django.db import models
+from django.contrib.auth.models import User
+from datetime import datetime
 
 # Create your models here.
 
@@ -36,3 +38,32 @@ class PROJECT(models.Model):
 
     def __str__(self):
         return self.Name
+
+
+class PROFILE(models.Model):
+    user = models.OneToOneField(User, on_delete = models.CASCADE)
+    FName = models.CharField(max_length=200)
+    LName = models.CharField(max_length=200)
+    Email = models.EmailField(null=True, blank=True)
+    Image = models.ImageField(upload_to='Profile')
+
+    def __str__(self):
+        return str(self.user)
+
+
+class BLOG(models.Model):
+    ABOUTS  = (
+        ('WEB', 'WEB'),
+        ('ADROID', 'ADROID'),
+        ('DESKTOP', 'DESKTOP'),
+        ('SYSTEMS', 'SYSTEMS'),
+    )
+    Title = models.CharField(max_length=200)
+    Date_Created = models.DateTimeField(default=datetime.now)
+    Image = models.ImageField(upload_to='Blogs')
+    ABOUT = models.CharField(max_length=200, choices=ABOUTS, null=True, blank=True)
+    Description = models.TextField()
+
+    def __str__(self):
+        return self.Title
+

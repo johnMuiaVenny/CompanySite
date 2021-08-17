@@ -6,6 +6,7 @@ from django.contrib.auth.decorators import login_required
 from .decorators import *
 from .models import *
 from .forms import *
+from .filters import *
 
 #Create your views here.
 
@@ -17,15 +18,34 @@ def About(request):
     return render(request, 'About.html')
 
 
-#@login_required(login_url='/Login')
+@login_required(login_url='/Login')
 def Profile(request):
-    return render(request, 'Profile.html')
+    prof = request.user.profile
+    form = MyProfile(instance=prof)
+    return render(request, 'Profile.html', {'form':form})
+
+def UpdateProfile(request, id):
+    user = PROFILE.objects.get(pk=id)
+    if request.method == 'POST':
+        form = MyProfile(request.POST, request.FILES, instance=user)
+        if form.is_valid():
+            form.save()
+            return redirect('/Profile')
+    return render(request, 'Profile.html', {'form':form})
 
 
 #@login_required(login_url='/Login')
 def Team(request):
     team = DIRECTORS.objects.order_by('pk')[:6]
     return render(request, 'Team.html', {'team':team})
+
+
+#@login_required(login_url='/Login')
+def Blogs(request):
+    blog = BLOG.objects.order_by('-pk')
+    filtered = MyFilter(request.GET, queryset=blog)
+    blog = filtered.qs
+    return render(request, 'Blogs.html', {'blog':blog, 'filtered':filtered})
 
 
 #@login_required(login_url='/Login')

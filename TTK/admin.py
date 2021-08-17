@@ -6,3 +6,5 @@ admin.site.site_header='TeamTechKenya'
 admin.site.register(CONTACT)
 admin.site.register(DIRECTORS)
 admin.site.register(PROJECT)
+admin.site.register(PROFILE)
+admin.site.register(BLOG)
