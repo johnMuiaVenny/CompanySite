@@ -6,6 +6,7 @@ from django.contrib.auth.decorators import login_required
 from .decorators import *
 from .models import *
 from .forms import *
+from django.db.models import Q
 from .filters import *
 
 #Create your views here.
@@ -41,11 +42,33 @@ def Team(request):
 
 
 #@login_required(login_url='/Login')
+def Search(request):
+    Title = request.GET['title']
+    About = request.GET['about']
+    Description = request.GET['description']
+    if Title:
+        MySearch = BLOG.objects.filter(Q(Title=Title)|Q(Title__istartswith=Title)|Q(Title__icontains=Title))
+    elif About:
+        MySearch = BLOG.objects.filter(ABOUT=About)
+    elif Description:
+        MySearch = BLOG.objects.filter(Q(Description=Description)|Q(Description__istartswith=Description)|Q(Description__icontains=Description))
+    else:
+        return redirect('/')
+
+    return render(request, 'Search.html', {'MySearch':MySearch})
+
+
+#@login_required(login_url='/Login')
 def Blogs(request):
     blog = BLOG.objects.order_by('-pk')
     filtered = MyFilter(request.GET, queryset=blog)
     blog = filtered.qs
     return render(request, 'Blogs.html', {'blog':blog, 'filtered':filtered})
+
+
+def BlogDetails(request, slug):
+    Details = BLOG.objects.get(pk=slug)
+    return render(request, 'Search.html', {'Details':Details})
 
 
 #@login_required(login_url='/Login')

@@ -44,7 +44,7 @@
 	<!-- Post Description -->
 	<p class="">{{blog.Description}}</p>
 	<!-- Read more button -->
-	<a href="{% url 'TTK:About' %}" class="btn btn-transparent">Read More</a>
+	<a href="{% url 'TTK:BlogDetails' blog.id %}" class="btn btn-transparent">Read More</a>
 </article>
 {% endfor %}
 

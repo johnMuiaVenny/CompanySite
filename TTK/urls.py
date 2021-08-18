@@ -5,16 +5,18 @@ from .views import *
 app_name = 'TTK'
 
 urlpatterns = [
-    path('Register', Register, name = 'Register'),
+    path('Register', Register, name = 'Register'), 
     path('Login', Login, name = 'Login'),
     path('Logout', Logout, name = 'Logout'),
     #ppppppppppppppppppppppppppppppppppppppp
     path('About', About, name = 'About'),
     path('Contact', Contact, name = 'Contact'),
     path('Team', Team, name = 'Team'),
+    path('Search', Search, name = 'Search'),
     path('Profile', Profile, name = 'Profile'),
     path('Blogs', Blogs, name = 'Blogs'),
     path('<int:id>', UpdateProfile, name = 'UpdateProfile'),
+    path('<int:slug>/BlogDetails', BlogDetails, name = 'BlogDetails'),
     path('Services', Services, name = 'Services'),
     path('', index, name = 'index'),
 ]

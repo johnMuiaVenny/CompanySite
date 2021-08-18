@@ -1,0 +1,124 @@
+{% extends "Base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<!--================================
+=            Page Title            =
+=================================-->
+<section class="page-title">
+	<!-- Container Start -->
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 offset-md-2 text-center">
+				<!-- Title text -->
+                {% if Details %}
+				<h3>Blog Details</h3>
+                {% else %}
+                <h3>Search Results</h3>
+                {% endif %}
+			</div>
+		</div>
+	</div>
+	<!-- Container End -->
+</section>
+<!--==================================
+=            Blog Section            =
+===================================-->
+{% if not Details %}
+<section class="MySearch section">
+	<div class="container">
+{% if MySearch %}        
+		<div class="row">
+		 <div class="col-md-10 offset-md-1 col-lg-9 offset-lg-0">
+	
+<!-- Article 01 -->
+{% for MySearch in MySearch %}
+<article>
+	<!-- Post Image -->
+	<div class="image">
+		<img src="{{MySearch.Image.url}}" alt="article-01">
+	</div>
+</article>
+
+			</div>
+			  <div class="col-md-10 offset-md-1 col-lg-3 offset-lg-0">
+				<div class="sidebar">
+					<!-- Category Widget -->
+					<div class="widget category">
+						<!-- Widget Header -->
+						<h5 class="widget-header">{{MySearch.Title}}</h5>
+                        <ul class="list-inline">
+                            <li class="list-inline-item">{{MySearch.Date_Created}}</li>
+                        </ul><br>
+						<ul class="category-list">
+							<p>{{MySearch.Description}}</p>
+						</ul>
+                        <a href="{% url 'TTK:About' %}" class="btn btn-transparent">About US</a>
+					</div>
+				</div>
+			</div>
+ {% endfor %}
+
+</div>
+
+ {% else %}
+ <center>
+ <div class="widget dashboard-links">
+    <ul>
+        <p>SEARCH KEY NOT FOUND!!</p>
+    </ul>
+</div>
+</center>
+{% endif %}
+
+	</div>
+</section>
+{% endif %}
+
+
+<!-- Detail view for blogs -->
+{% if Details %}
+<section class="MySearch section">
+	<div class="container">       
+		<div class="row">
+		 <div class="col-md-10 offset-md-1 col-lg-9 offset-lg-0">
+	
+<!-- Article 01 -->
+<article>
+	<!-- Post Image -->
+	<div class="image">
+		<img src="{{Details.Image.url}}" alt="article-01">
+	</div>
+</article>
+
+			</div>
+			  <div class="col-md-10 offset-md-1 col-lg-3 offset-lg-0">
+				<div class="sidebar">
+					<!-- Category Widget -->
+					<div class="widget category">
+						<!-- Widget Header -->
+						<h5 class="widget-header">{{Details.Title}}</h5>
+                        <ul class="list-inline">
+                            <li class="list-inline-item">{{Details.Date_Created}}</li>
+                        </ul><br>
+						<ul class="category-list">
+							<p>{{Details.Description}}</p>
+						</ul>
+                        <a href="{% url 'TTK:About' %}" class="btn btn-transparent">About US</a>
+					</div>
+				</div>
+			</div>
+
+</div>
+		
+	</div>
+</section>
+{% endif %}
+
+<!--============================
+=            Footer            =
+=============================-->
+
+{% endblock %}

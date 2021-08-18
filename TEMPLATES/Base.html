@@ -63,8 +63,8 @@
                                     <!-- Dropdown list -->
                                     <div class="dropdown-menu">
                                         <a class="dropdown-item" href="https://www.teamtechkenya.co.ke/">TeamTechKenya</a>
-                                        <a class="dropdown-item" href="https://www.teamtechkenya.co.ke/">MoonlightStores</a>
-                                        <a class="dropdown-item" href="https://www.teamtechkenya.co.ke/">AgriDoctorKenya</a>
+                                        <a class="dropdown-item" href="https://www.moonlightstore.co.ke/">MoonlightStores</a>
+                                        <a class="dropdown-item" href="https://developerfelix.pythonanywhere.com/">InnovationClub</a>
                                         <a class="dropdown-item" href="https://www.teamtechkenya.co.ke/">project 4</a>
                                         <a class="dropdown-item" href="https://www.teamtechkenya.co.ke/">project 5</a>
                                     </div>
@@ -95,13 +95,13 @@
                             <ul class="navbar-nav ml-auto mt-10">
                                 <li class="nav-item">
                                     {% if not request.user.is_authenticated %}
-                                    <a class="nav-link login-button" href="{% url 'TTK:Login' %}">Login</a>
+                                    <a onmouseover="this.style.color='blue'" class="nav-link login-button" href="{% url 'TTK:Login' %}">Login</a>
                                     {% else %}
-                                    <a class="nav-link login-button" href="{% url 'TTK:Logout' %}">Logout</a>
+                                    <a onmouseover="this.style.color='blue'" class="nav-link login-button" href="{% url 'TTK:Logout' %}">Logout</a>
                                     {% endif %}
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-white add-button" href="{% url 'TTK:Register' %}"><i class="fa fa-plus-circle"></i> Get started</a>
+                                    <a style="background-color: rgb(65, 94, 140);" class="nav-link text-white add-button" href="{% url 'TTK:Register' %}"><i class="fa fa-plus-circle"></i> Get started</a>
                                 </li>
                             </ul>
                         </div>
@@ -196,10 +196,10 @@
         <div class="col-sm-6 col-12">
           <!-- Social Icons -->
           <ul class="social-media-icons text-right">
-            <li><a class="fa fa-facebook" href="https://www.teamtechkenya.co.ke/" target="_blank"></a></li>
-            <li><a class="fa fa-twitter" href="https://www.teamtechkenya.co.ke/" target="_blank"></a></li>
-            <li><a class="fa fa-instagram" href="https://www.teamtechkenya.co.ke/" target="_blank"></a></li>
-            <li><a class="fa fa-linkedin" href="https://www.teamtechkenya.co.ke/"></a></li>
+            <li><a class="fa fa-facebook" href="https://www.facebook.com/Teamtechkenya-100446841977643/" target="_blank"></a></li>
+            <li><a class="fa fa-twitter" href="https://twitter.com/teamtechkenya" target="_blank"></a></li>
+            <li><a class="fa fa-instagram" href="https://www.instagram.com/teamtechkenya/" target="_blank"></a></li>
+            <li><a class="fa fa-linkedin" href="#"></a></li>
           </ul>
         </div>
       </div>
