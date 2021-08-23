@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'TTK.apps.TtkConfig',
+    'RESETpASS.apps.ResetpassConfig',
 ]
 
 MIDDLEWARE = [
@@ -133,6 +134,15 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'Allstatic')
 #Media files config
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+#Email config 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'muiav167@gmail.com'
+EMAIL_HOST_PASSWORD = 'v34311980#'
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

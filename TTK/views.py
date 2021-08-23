@@ -21,7 +21,7 @@ def About(request):
 
 @login_required(login_url='/Login')
 def Profile(request):
-    prof = request.user.profile
+    prof = request.user.profile #active object of Profile Model.
     form = MyProfile(instance=prof)
     return render(request, 'Profile.html', {'form':form})
 
@@ -37,7 +37,7 @@ def UpdateProfile(request, id):
 
 #@login_required(login_url='/Login')
 def Team(request):
-    team = DIRECTORS.objects.order_by('pk')[:6]
+    team = DIRECTORS.objects.order_by('-pk')[:6]
     return render(request, 'Team.html', {'team':team})
 
 
@@ -73,7 +73,7 @@ def BlogDetails(request, slug):
 
 #@login_required(login_url='/Login')
 def Services(request):
-    projects = PROJECT.objects.order_by('pk')[:4]
+    projects = PROJECT.objects.order_by('-pk')[:4]
     return render(request, 'Services.html', {'projects':projects})
 
 #@login_required(login_url='/Login')    
