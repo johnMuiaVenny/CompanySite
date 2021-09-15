@@ -18,8 +18,8 @@
                     <form action="" method="POST">
                       {% csrf_token %}
                         <fieldset class="p-4">
-                            <input type="text" placeholder="Username" name="username" class="border p-3 w-100 my-2">
-                            <input type="password" placeholder="Password" name="password1" class="border p-3 w-100 my-2">
+                            <input required type="text" placeholder="Username" name="username" class="border p-3 w-100 my-2">
+                            <input required type="password" placeholder="Password" name="password1" class="border p-3 w-100 my-2">
                             <div class="loggedin-forgot">
                                     <input type="checkbox" id="keep-me-logged-in">
                                     <label for="keep-me-logged-in" class="pt-3 pb-2">Keep me logged in</label>
