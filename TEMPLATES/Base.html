@@ -96,13 +96,13 @@
                             <ul class="navbar-nav ml-auto mt-10">
                                 <li class="nav-item">
                                     {% if not request.user.is_authenticated %}
-                                    <a onmouseover="this.style.color='blue'" class="nav-link login-button" href="{% url 'TTK:Login' %}">Login</a>
+                                    <a onmouseover="this.style.color='blue'" class="nav-link login-button" href="/accounts/login">Login</a>
                                     {% else %}
                                     <a onmouseover="this.style.color='blue'" class="nav-link login-button" href="{% url 'TTK:Logout' %}">Logout</a>
                                     {% endif %}
                                 </li>
                                 <li class="nav-item">
-                                    <a style="background-color: rgb(65, 94, 140);" class="nav-link text-white add-button" href="{% url 'TTK:Register' %}"><i class="fa fa-plus-circle"></i> Get started</a>
+                                    <a style="background-color: rgb(65, 94, 140);" class="nav-link text-white add-button" href="/accounts/signup"><i class="fa fa-plus-circle"></i> Get started</a>
                                 </li>
                             </ul>
                         </div>

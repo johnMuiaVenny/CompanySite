@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-uahfo^@*&edzufc9tn*16gmd#udysf5redua)eqo01)yh5r^i_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost']
 
 
 # Application definition
@@ -41,6 +41,14 @@ INSTALLED_APPS = [
     'TTK.apps.TtkConfig',
     'RESETpASS.apps.ResetpassConfig',
     'crispy_forms',
+    #Allauth
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
+    # 'allauth.socialaccount.providers.github',
+    'allauth.socialaccount.providers.facebook',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -60,7 +68,7 @@ ROOT_URLCONF = 'TEAMTEACHK.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR, 'TEMPLATES'],
+        'DIRS': [os.path.join(BASE_DIR, 'TEMPLATES'), os.path.join(BASE_DIR, 'TEMPLATES', 'accounts')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -68,6 +76,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.request',
             ],
         },
     },
@@ -82,7 +91,7 @@ WSGI_APPLICATION = 'TEAMTEACHK.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'MACHAKOS',
+        'NAME': 'TEAM',
         'PASSWORD': '1234',
         'PORT': '5432',
         'USER': 'postgres',
@@ -142,8 +151,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'muiav167@gmail.com'
-EMAIL_HOST_PASSWORD = 'v34311980#'
+EMAIL_HOST_USER = 'muiaj267@gmail.com'
+EMAIL_HOST_PASSWORD = 'j34311980#'
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 
@@ -151,3 +160,61 @@ EMAIL_USE_SSL = False
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
+SITE_ID = 1
+
+#AUTH_USER_MODEL = 'TTK.CustomUser'
+
+
+# GOOGLE
+# 521341947000-aqr67lfiprddt43a66vunht80khtu3ia.apps.googleusercontent.com
+# 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
+
+# FACEBOOK
+# 452021159968591
+# 124f23e793853e978ca7ee73ed6cb268
+
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'SCOPE': [
+            'profile',
+            'email',
+        ],
+        'AUTH_PARAMS': {
+            'access_type': 'online',
+        }
+    },
+
+    'facebook': {
+        'METHOD': 'oauth2',
+        # 'SDK_URL': '//connect.facebook.net/{locale}/sdk.js',
+        'SCOPE': ['email', 'public_profile'],
+        'AUTH_PARAMS': {'auth_type': 'reauthenticate'},
+        'INIT_PARAMS': {'cookie': True},
+        'FIELDS': [
+            'id',
+            'first_name',
+            'last_name',
+            'middle_name',
+            'name',
+            'name_format',
+            'picture',
+            'short_name'
+        ],
+        'EXCHANGE_TOKEN': True,
+        # 'LOCALE_FUNC': 'path.to.callable',
+        'VERIFIED_EMAIL': False,
+        'VERSION': 'v7.0',
+    }
+}
+
+
+LOGIN_REDIRECT_URL = '/'
+
+ACCOUNT_LOGOUT_REDIRECT_URL = 'account_login'

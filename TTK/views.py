@@ -19,7 +19,7 @@ def About(request):
     return render(request, 'About.html')
 
 
-@login_required(login_url='/Login')
+@login_required(login_url='/accounts/login')
 def Profile(request):
     prof = request.user.profile #active object of Profile Model.
     form = MyProfile(instance=prof)
@@ -140,5 +140,5 @@ def Login(request):
 
 def Logout(request):
     auth.logout(request)
-    return redirect('/')
+    return redirect('/accounts/login')
 
